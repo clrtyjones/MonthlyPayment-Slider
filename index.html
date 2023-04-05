@@ -15,13 +15,40 @@
         <!-- Squircle Border -->
         <div class="squircle">
 
-            <!-- Numbers -->
-            <p><span id="demo"></span></p>
-
-            <!-- The Slider -->
-            <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <!-- Title Message -->
+            <div class = "titleText">
+                <br><br><br><br>
+                <p><b>Monthly Payments <br> Range From:</b></p>
             </div>
+
+            <!-- Monthly Payment Total Display -->
+            <div class = "paymentCalcs">
+                <p>$<span id="low"></span> to $<span id="high"></span></p>
+            </div>
+
+            <!-- Slider Adjustment Message -->
+            <div class = "adjustmentText">
+                <p>Use slider below to adjust<br>cost of your service.</p>
+            </div>
+        </div>
+
+        <!-- The Slider -->
+        <div class="slidecontainer">
+            <br><br><br><br><br>
+            <div class = "hidethis">
+                <p>$<span id="sliderAmount"></span></p>
+            </div>
+
+            <div class = "minMaxAmounts">
+                <p>$1,000 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; $50,000</p>
+            </div>
+
+            <div class="range-wrap">
+                    <input type="range" min="1000" max="50000" value="25000" class="range" id="myRange" step="1000">
+                    <output class="bubble"></output>
+            </div>
+
+            
         </div>
     </div>
 

@@ -1,3 +1,4 @@
+/* ---- Main Web Styling ---- */
 *{
     padding: 0;
     margin: 0;
@@ -6,65 +7,195 @@
 body{
     height: 100vh;
     background: linear-gradient(
-        #0026ff,
+        rgb(50, 0, 233),
         #00ffff
     ) 0 100% no-repeat;
     background-size: 100%;
 }
+
+
+/* ---- Main Widget/Background Styling ---- */
 .widget{
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  display: table-cell;
+  flex-direction: column;
 }
 .squircle {
     transform: scale(4);
-    height: 150px;
-    width: 100px;
+    height: 12vw;
+    width: 12vw;
     background-color: white;
-    background-size: cover;
+    background-size: contain;
     margin: 20px;
-    border-radius: 24px;
-    border: 2px solid rgb(49, 49, 49);
+    border-radius: 100px;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
   }
 
-  .slidecontainer {
-    text-align: center;
-    padding: 2px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    transform: scale(0.4);
-    /* border: 2px solid rgb(49, 49, 49); */
-  }
 
-  .slider {
-    -webkit-appearance: none;
-    width: 150px;
-    height: 6px;
-    border-radius: 10px;
-    appearance: none;
-    background: gray;
-    outline: none;
-    -webkit-transition: .2s;
-    transition: opacity .2;
-    position:relative;
-    left:50%;
-    margin-left:-75px;
-  }
-  .slider:hover {
+/* ---- Title Text Styling ---- */
+.titleText {
+  font-size: 0.7vw;;
+  color: rgb(65, 65, 65);
+  font-family: "Poppins",sans-serif;
+  line-height: 1.2em;
+}
+
+
+/* ---- Monthly Payment Total Styling ---- */
+.paymentCalcs {
+  font-size: 0.9vw;
+  font-family: "Poppins",sans-serif;
+  color: rgb(36, 0, 167);
+  line-height: 3em;
+}
+
+
+/* ---- Slider Adjustment Message Styling ---- */
+.adjustmentText {
+  font-size: 0.6vw;
+  font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: rgb(134, 134, 134);
+  line-height: 1em;
+  padding: 7px;
+}
+
+
+/* ---- Slider Styling ----*/
+.slidecontainer {
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform: scale(2);
+  font-family: "Poppins",sans-serif;
+  font-size: 1.8vw;
+}
+
+.hidethis {
+  display: none;
+}
+
+.minMaxAmounts {
+  color: white;
+  font-size: 1.3vw;
+}
+
+.slider {
+  width: 15vw;
+}
+.slider:hover {
     opacity: 1;
-  }
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 10px;
-    height: 14px;
-    border-radius: 4px;
-    background: rgb(49, 49, 49);
-    cursor: pointer; /* Cursor on hover */
-  }
+}
+
+input[type="range"] {
+	color: #7800da;
+	--thumb-height: 1.125em;
+	--track-height: 0.125em;
+	--track-color: rgba(0, 0, 0, 0.2);
+	--brightness-hover: 180%;
+	--brightness-down: 80%;
+	--clip-edges: 0.125em;
+}
+
+input[type="range"] {
+	position: relative;
+	background: #fff0;
+	overflow: hidden;
+}
+
+input[type="range"]:active {
+	cursor: grabbing;
+}
+
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	transition: all ease 100ms;
+	height: var(--thumb-height);
+}
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	--thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+	--clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+	--clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+	--clip-further: calc(100% + 1px);
+	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+		100vmax ;
+
+	width: var(--thumb-width, var(--thumb-height));
+	background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
+		50% calc(var(--track-height) + 1px);
+	background-color: currentColor;
+	box-shadow: var(--box-fill);
+	border-radius: var(--thumb-width, var(--thumb-height));
+
+	filter: brightness(100%);
+	clip-path: polygon(
+		100% -1px,
+		var(--clip-edges) -1px,
+		0 var(--clip-top),
+		-100vmax var(--clip-top),
+		-100vmax var(--clip-bottom),
+		0 var(--clip-bottom),
+		var(--clip-edges) 100%,
+		var(--clip-further) var(--clip-further)
+	);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-hover));
+	cursor: grab;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-down));
+	cursor: grabbing;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
+		100% calc(var(--track-height) + 1px);
+}
+
+
+.range-wrap {
+  position: relative;
+  margin: 0 auto 3rem;
+}
+.range {
+  width: 100%;
+}
+.bubble {
+  background: rgb(255, 255, 255, 0);
+  color: #7800da;
+  padding: 7px 12px;
+  position: absolute;
+  border-radius: 100px;
+  left: 50%;
+  transform: translateX(-52%);
+  bottom: -116%;
+  font-weight: bold;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: #ffffff;
+  top: -12px;
+  left: 45%;
+  display: none;
+}
